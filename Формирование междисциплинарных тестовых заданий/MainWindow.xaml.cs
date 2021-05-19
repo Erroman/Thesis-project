@@ -24,5 +24,10 @@ namespace Формирование_междисциплинарных_тесто
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

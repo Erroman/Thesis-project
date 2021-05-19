@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Формирование_междисциплинарных_тестовых_заданий"
         mc:Ignorable="d"
-        Title="Формирование междисциплинарных тестовых заданий" Height="450" Width="800">
+        Title="Формирование междисциплинарных тестовых заданий" Height="450" Width="800" Loaded="Window_Loaded" >
     <Grid>
 
     </Grid>
