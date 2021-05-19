@@ -13,7 +13,7 @@ namespace GetStartedWPF
         private readonly ProductContext _context =
             new ProductContext();
 
-        private CollectionViewSource categoryViewSource;
+        private CollectionViewSource categoryViewSource; 
 
         public MainWindow()
         {
