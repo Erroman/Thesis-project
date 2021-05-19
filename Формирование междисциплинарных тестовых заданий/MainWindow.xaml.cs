@@ -20,6 +20,8 @@ namespace Формирование_междисциплинарных_тесто
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly QuestionContext _context =
+     new QuestionContext();
         public MainWindow()
         {
             InitializeComponent();
