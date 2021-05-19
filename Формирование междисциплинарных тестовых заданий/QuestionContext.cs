@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Формирование_междисциплинарных_тестовых_заданий
 {
     class QuestionContext : DbContext
@@ -9,7 +8,7 @@ namespace Формирование_междисциплинарных_тесто
 
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
-        {
+    {
             optionsBuilder.UseSqlite(
                 "Data Source=products.db");
             optionsBuilder.UseLazyLoadingProxies();
