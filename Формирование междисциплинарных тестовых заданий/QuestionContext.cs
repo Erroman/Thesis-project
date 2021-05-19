@@ -1,4 +1,4 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
 namespace Формирование_междисциплинарных_тестовых_заданий
 {
     class QuestionContext : DbContext
