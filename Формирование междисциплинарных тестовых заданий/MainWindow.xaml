@@ -8,11 +8,11 @@
         Title="Формирование междисциплинарных тестовых заданий" Height="450" Width="800" Loaded="Window_Loaded" >
     <Window.Resources>
         <CollectionViewSource x:Key="subjectViewSource"/>
-        <CollectionViewSource x:Key="subjectQuestionssViewSource" 
-                              Source="{Binding Subjects, Source={StaticResource subjectViewSource}}"/>
+        <CollectionViewSource x:Key="subjectQuestionsViewSource" 
+                              Source="{Binding Questions, Source={StaticResource subjectViewSource}}"/>
     </Window.Resources>
     <Grid>
-        <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
+        <DataGrid x:Name="subjectDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource subjectViewSource}}" 
                   Margin="13,13,43,229" RowDetailsVisibilityMode="VisibleWhenSelected">
@@ -22,6 +22,20 @@
                                     IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding SubjectName}" Header="Предмет" 
                                     Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="questionsDataGrid" AutoGenerateColumns="False" 
+                  EnableRowVirtualization="True" 
+                  ItemsSource="{Binding Source={StaticResource subjectQuestionsViewSource}}" 
+                  Margin="13,205,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
+                  RenderTransformOrigin="0.488,0.251">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding QuestionId}" 
+                                    Header="Вопрос Id" Width="SizeToHeader"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding SubjectId}" Header="Предмет Id" 
+                                    Width="SizeToHeader" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
