@@ -13,20 +13,26 @@ namespace Формирование_междисциплинарных_тесто
         private readonly QuestionContext _context =
      new QuestionContext();
         private CollectionViewSource subjectViewSource;
+        private CollectionViewSource questionViewSource;
         public MainWindow()
         {
             InitializeComponent();
             subjectViewSource =
          (CollectionViewSource)FindResource(nameof(subjectViewSource));
+            questionViewSource =
+                (CollectionViewSource)FindResource(nameof(questionViewSource));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _context.Database.EnsureCreated();
             _context.Subjects.Load();
+            _context.Questions.Load();
             // bind to the source
             subjectViewSource.Source =
                 _context.Subjects.Local.ToObservableCollection();
+            questionViewSource.Source =
+                _context.Questions.Local.ToObservableCollection();
         }
         protected override void OnClosing(CancelEventArgs e)
         {

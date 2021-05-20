@@ -8,8 +8,11 @@
         Title="Формирование междисциплинарных тестовых заданий" Height="450" Width="800" Loaded="Window_Loaded" >
     <Window.Resources>
         <CollectionViewSource x:Key="subjectViewSource"/>
+        <CollectionViewSource x:Key="questionViewSource"/>
         <CollectionViewSource x:Key="subjectQuestionsViewSource" 
                               Source="{Binding Questions, Source={StaticResource subjectViewSource}}"/>
+        <CollectionViewSource x:Key="questionAnswersViewSource" 
+                              Source="{Binding Answers, Source={StaticResource questionViewSource}}"/>
     </Window.Resources>
     <Grid>
         <DataGrid x:Name="subjectDataGrid" AutoGenerateColumns="False" 
@@ -36,6 +39,20 @@
                 <DataGridTextColumn Binding="{Binding SubjectId}" Header="Предмет Id" 
                                     Width="SizeToHeader" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="answersDataGrid" AutoGenerateColumns="False" 
+                  EnableRowVirtualization="True" 
+                  ItemsSource="{Binding Source={StaticResource questionAnswersViewSource}}" 
+                  Margin="13,397,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
+                  RenderTransformOrigin="0.488,0.251">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding AnswerId}" 
+                                    Header="Ответ Id" Width="SizeToHeader"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding QuestionId}" Header="Вопрос Id" 
+                                    Width="SizeToHeader" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding AnswerText}" Header="Ответ" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
