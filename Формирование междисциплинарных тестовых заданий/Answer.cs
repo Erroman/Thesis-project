@@ -13,6 +13,7 @@ namespace Формирование_междисциплинарных_тесто
 
         public int QuestionId { get; set; }
         public virtual Question Question { get; set; }
+        public bool IsRight { get; set; }
 
     }
 }
