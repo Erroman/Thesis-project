@@ -28,6 +28,13 @@ namespace Формирование_междисциплинарных_тесто
             subjectViewSource.Source =
                 _context.Subjects.Local.ToObservableCollection();
         }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            _context.SaveChanges();
+            // clean up database connections
+            _context.Dispose();
+            base.OnClosing(e);
+        }
     }
 }
  
