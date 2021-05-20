@@ -12,15 +12,22 @@ namespace Формирование_междисциплинарных_тесто
     {
         private readonly QuestionContext _context =
      new QuestionContext();
-        private CollectionViewSource categoryViewSource;
+        private CollectionViewSource subjectViewSource;
         public MainWindow()
         {
             InitializeComponent();
+            subjectViewSource =
+         (CollectionViewSource)FindResource(nameof(subjectViewSource));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            _context.Database.EnsureCreated();
+            _context.Subjects.Load();
+            // bind to the source
+            subjectViewSource.Source =
+                _context.Subjects.Local.ToObservableCollection();
         }
     }
 }
+ 
