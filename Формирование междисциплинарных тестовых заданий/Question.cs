@@ -4,11 +4,12 @@ using System.Collections.ObjectModel;
 namespace Формирование_междисциплинарных_тестовых_заданий
 {
     public class Question
-    {
+    {      
+        public int SubjectId { get; set; }
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }
 
-        public int SubjectId { get; set; }
+  
         public virtual Subject Subject { get; set; }
 
         public virtual ICollection<Answer>
