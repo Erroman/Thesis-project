@@ -31,13 +31,13 @@
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource subjectQuestionsViewSource}}" 
                   Margin="13,205,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
-                  RenderTransformOrigin="0.488,0.251">
+                  RenderTransformOrigin="0.488,0.251" SelectionChanged="questionsDataGrid_SelectionChanged">
             <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding SubjectId}" Header="Предмет Id" 
+                                    Width="SizeToHeader" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding QuestionId}" 
                                     Header="Вопрос Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding SubjectId}" Header="Предмет Id" 
-                                    Width="SizeToHeader" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -47,11 +47,14 @@
                   Margin="13,397,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding AnswerId}" 
-                                    Header="Ответ Id" Width="SizeToHeader"
+                <DataGridTextColumn Binding="{Binding SubjectId}" 
+                                    Header="Предмет Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding QuestionId}" Header="Вопрос Id" 
                                     Width="SizeToHeader" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding AnswerId}" 
+                                    Header="Ответ Id" Width="SizeToHeader"
+                                    IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding AnswerText}" Header="Ответ" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>

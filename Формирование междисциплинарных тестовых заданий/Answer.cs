@@ -8,10 +8,12 @@ namespace Формирование_междисциплинарных_тесто
 {
     public class Answer
     {
+        public int SubjectId { get; set; }
+        public int QuestionId { get; set; }
         public int AnswerId { get; set; }
         public string AnswerText { get; set; }
 
-        public int QuestionId { get; set; }
+    
         public virtual Question Question { get; set; }
         public bool IsRight { get; set; }
 

@@ -31,8 +31,7 @@ namespace Формирование_междисциплинарных_тесто
             // bind to the source
             subjectViewSource.Source =
                 _context.Subjects.Local.ToObservableCollection();
-            questionViewSource.Source =
-                _context.Questions.Local.ToObservableCollection();
+   
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -40,6 +39,16 @@ namespace Формирование_междисциплинарных_тесто
             // clean up database connections
             _context.Dispose();
             base.OnClosing(e);
+        }
+
+        private void questionsDataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //  subjectDataGrid.Items.Refresh();
+            // questionsDataGrid.Items.Refresh();
+            // answersDataGrid.Items.Refresh();
+            //MessageBox.Show("Selection changed!");
+         questionViewSource.Source =
+                _context.Questions.Local.ToObservableCollection();
         }
     }
 }
