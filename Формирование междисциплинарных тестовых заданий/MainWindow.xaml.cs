@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
+using System.Linq;
 
 namespace Формирование_междисциплинарных_тестовых_заданий
 {
@@ -14,6 +15,7 @@ namespace Формирование_междисциплинарных_тесто
      new QuestionContext();
         private CollectionViewSource subjectViewSource;
         private CollectionViewSource questionViewSource;
+        private CollectionViewSource questionAnswersViewSource;
         public MainWindow()
         {
             InitializeComponent();
@@ -21,6 +23,8 @@ namespace Формирование_междисциплинарных_тесто
          (CollectionViewSource)FindResource(nameof(subjectViewSource));
             questionViewSource =
                 (CollectionViewSource)FindResource(nameof(questionViewSource));
+            questionAnswersViewSource =
+                (CollectionViewSource)FindResource(nameof(questionAnswersViewSource));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -47,8 +51,10 @@ namespace Формирование_междисциплинарных_тесто
             // questionsDataGrid.Items.Refresh();
             // answersDataGrid.Items.Refresh();
             //MessageBox.Show("Selection changed!");
-         questionViewSource.Source =
-                _context.Questions.Local.ToObservableCollection();
+            questionAnswersViewSource.Source =
+                _context.Questions.Local.ToObservableCollection().Take<Question>(2);
+            answersDataGrid.Items.Refresh();
+            //MessageBox.Show("Selection changed!");
         }
     }
 }
