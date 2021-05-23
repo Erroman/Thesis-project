@@ -8,14 +8,12 @@
         Title="Формирование междисциплинарных тестовых заданий" Height="801" Width="800" Loaded="Window_Loaded" >
     <Window.Resources>
         <CollectionViewSource x:Key="subjectViewSource"/>
-        <CollectionViewSource x:Key="questionViewSource"/>
         <CollectionViewSource x:Key="subjectQuestionsViewSource" 
                               Source="{Binding Questions, Source={StaticResource subjectViewSource}}"/>
-        <CollectionViewSource x:Key="questionAnswersViewSource" 
-                              Source="{Binding Answers, Source={StaticResource questionViewSource}}"/>
+        <CollectionViewSource x:Key="answerViewSource"/>
     </Window.Resources>
-    <Grid>
-        <DataGrid x:Name="subjectDataGrid" AutoGenerateColumns="False" 
+    <Grid>  
+        <DataGrid x:Name="subjectsDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource subjectViewSource}}" 
                   Margin="13,13,43,229" RowDetailsVisibilityMode="VisibleWhenSelected">
@@ -43,7 +41,7 @@
         </DataGrid>
         <DataGrid x:Name="answersDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
-                  ItemsSource="{Binding Source={StaticResource questionAnswersViewSource}}" 
+                  ItemsSource="{Binding Source={StaticResource answerViewSource}}" 
                   Margin="13,397,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251">
             <DataGrid.Columns>

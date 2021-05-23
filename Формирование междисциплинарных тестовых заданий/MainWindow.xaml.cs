@@ -14,17 +14,14 @@ namespace Формирование_междисциплинарных_тесто
         private readonly QuestionContext _context =
      new QuestionContext();
         private CollectionViewSource subjectViewSource;
-        private CollectionViewSource questionViewSource;
-        private CollectionViewSource questionAnswersViewSource;
+        private CollectionViewSource answerViewSource;
         public MainWindow()
         {
             InitializeComponent();
             subjectViewSource =
          (CollectionViewSource)FindResource(nameof(subjectViewSource));
-            questionViewSource =
-                (CollectionViewSource)FindResource(nameof(questionViewSource));
-            questionAnswersViewSource =
-                (CollectionViewSource)FindResource(nameof(questionAnswersViewSource));
+            answerViewSource =
+                (CollectionViewSource)FindResource(nameof(answerViewSource));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -32,14 +29,17 @@ namespace Формирование_междисциплинарных_тесто
             _context.Database.EnsureCreated();
             _context.Subjects.Load();
             _context.Questions.Load();
+            _context.Answers.Load();
             // bind to the source
             subjectViewSource.Source =
                 _context.Subjects.Local.ToObservableCollection();
-   
+            answerViewSource.Source =
+                _context.Answers.Local.ToObservableCollection();
+
         }
         protected override void OnClosing(CancelEventArgs e)
         {
-            _context.SaveChanges();
+                _context.SaveChanges();
             // clean up database connections
             _context.Dispose();
             base.OnClosing(e);
@@ -47,12 +47,11 @@ namespace Формирование_междисциплинарных_тесто
 
         private void questionsDataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            //  subjectDataGrid.Items.Refresh();
+            //  subjectsDataGrid.Items.Refresh();
             // questionsDataGrid.Items.Refresh();
             // answersDataGrid.Items.Refresh();
             //MessageBox.Show("Selection changed!");
-            questionAnswersViewSource.Source =
-                _context.Questions.Local.ToObservableCollection().Take<Question>(2);
+  
             answersDataGrid.Items.Refresh();
             //MessageBox.Show("Selection changed!");
         }
