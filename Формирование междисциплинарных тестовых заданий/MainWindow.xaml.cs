@@ -51,8 +51,9 @@ namespace Формирование_междисциплинарных_тесто
             // questionsDataGrid.Items.Refresh();
             // answersDataGrid.Items.Refresh();
             //MessageBox.Show("Selection changed!");
-  
-            answersDataGrid.Items.Refresh();
+            answerViewSource.Source =
+                 _context.Answers.Local.ToObservableCollection().Take(3);
+            //answersDataGrid.Items.Refresh();
             //MessageBox.Show("Selection changed!");
         }
     }
