@@ -28,8 +28,8 @@ namespace Формирование_междисциплинарных_тесто
         {
             _context.Database.EnsureCreated();
             _context.Subjects.Load();
-            _context.Questions.Load();
-            _context.Answers.Load();
+ //           _context.Questions.Load();
+ //           _context.Answers.Load();
             // bind to the source
             subjectsViewSource.Source =
                 _context.Subjects.Local.ToObservableCollection();
