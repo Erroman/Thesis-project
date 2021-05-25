@@ -13,15 +13,15 @@ namespace Формирование_междисциплинарных_тесто
     {
         private readonly QuestionContext _context =
      new QuestionContext();
-        private CollectionViewSource subjectViewSource;
-        private CollectionViewSource answerViewSource;
+        private CollectionViewSource subjectsViewSource;
+        private CollectionViewSource answersViewSource;
         public MainWindow()
         {
             InitializeComponent();
-            subjectViewSource =
-         (CollectionViewSource)FindResource(nameof(subjectViewSource));
-            answerViewSource =
-                (CollectionViewSource)FindResource(nameof(answerViewSource));
+            subjectsViewSource =
+         (CollectionViewSource)FindResource(nameof(subjectsViewSource));
+            //answersViewSource =
+            //    (CollectionViewSource)FindResource(nameof(answerViewSource));
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -31,10 +31,10 @@ namespace Формирование_междисциплинарных_тесто
             _context.Questions.Load();
             _context.Answers.Load();
             // bind to the source
-            subjectViewSource.Source =
+            subjectsViewSource.Source =
                 _context.Subjects.Local.ToObservableCollection();
-            answerViewSource.Source =
-                _context.Answers.Local.ToObservableCollection();
+            //answersViewSource.Source =
+            //    _context.Answers.Local.ToObservableCollection();
 
         }
         protected override void OnClosing(CancelEventArgs e)
