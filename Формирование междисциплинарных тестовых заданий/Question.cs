@@ -5,7 +5,6 @@ namespace Формирование_междисциплинарных_тесто
 {
     public class Question
     {      
-        public int SubjectId { get; set; }
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }
 
