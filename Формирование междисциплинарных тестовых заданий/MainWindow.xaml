@@ -13,43 +13,52 @@
         <CollectionViewSource x:Key="answersViewSource"
                               Source="{Binding Answers, Source={StaticResource questionsViewSource}}"/>
     </Window.Resources>
-    <Grid>  
-        <DataGrid x:Name="subjectsDataGrid" AutoGenerateColumns="False" 
+    <TabControl>
+        <TabItem Header="Тестирование">
+        </TabItem>
+        <TabItem Header="Создание тестов">
+            <Grid>
+                <DataGrid x:Name="subjectsDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource subjectsViewSource}}" 
                   Margin="13,13,43,229" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectId}"
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding SubjectId}"
                                     Header="Предмет Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Предмет" 
+                        <DataGridTextColumn Binding="{Binding SubjectName}" Header="Предмет" 
                                     Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="questionsDataGrid" AutoGenerateColumns="False" 
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid x:Name="questionsDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource questionsViewSource}}" 
                   Margin="13,205,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251" SelectionChanged="questionsDataGrid_SelectionChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding QuestionId}" 
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding QuestionId}" 
                                     Header="Вопрос Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="answersDataGrid" AutoGenerateColumns="False" 
+                        <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid x:Name="answersDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource answersViewSource}}" 
                   Margin="13,397,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding AnswerId}" 
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding AnswerId}" 
                                     Header="Ответ Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding AnswerText}" Header="Ответ" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                        <DataGridTextColumn Binding="{Binding AnswerText}" Header="Ответ" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
 
-    </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Администрирование">
+        </TabItem>
+
+    </TabControl>
 </Window>
