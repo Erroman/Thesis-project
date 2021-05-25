@@ -31,8 +31,6 @@
                   Margin="13,205,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251" SelectionChanged="questionsDataGrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectId}" Header="Предмет Id" 
-                                    Width="SizeToHeader" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding QuestionId}" 
                                     Header="Вопрос Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
@@ -45,11 +43,6 @@
                   Margin="13,397,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectId}" 
-                                    Header="Предмет Id" Width="SizeToHeader"
-                                    IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding QuestionId}" Header="Вопрос Id" 
-                                    Width="SizeToHeader" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding AnswerId}" 
                                     Header="Ответ Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
