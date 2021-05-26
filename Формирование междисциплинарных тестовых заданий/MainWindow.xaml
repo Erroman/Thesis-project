@@ -13,7 +13,12 @@
         <CollectionViewSource x:Key="answersViewSource"
                               Source="{Binding Answers, Source={StaticResource questionsViewSource}}"/>
     </Window.Resources>
-    <TabControl>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="1">
         <TabItem Header="Тестирование">
         </TabItem>
         <TabItem Header="Создание тестов">
@@ -61,4 +66,5 @@
         </TabItem>
 
     </TabControl>
+    </Grid>
 </Window>
