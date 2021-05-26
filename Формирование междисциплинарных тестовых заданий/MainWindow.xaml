@@ -131,6 +131,8 @@
                     <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Text="Вход администратора" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
                     <TextBlock HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Text="Вход преподавателя" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
                     <TextBlock HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Text="Вход студента" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Логин:" TextWrapping="Wrap" VerticalAlignment="Center"  Width="57"/>
+                    <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Пароль:" TextWrapping="Wrap" VerticalAlignment="Center"  Width="57"/>
                 </Grid>
             </TabItem>
 
