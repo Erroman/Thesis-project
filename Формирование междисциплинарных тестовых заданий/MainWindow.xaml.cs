@@ -56,6 +56,10 @@ namespace Формирование_междисциплинарных_тесто
             //answersDataGrid.Items.Refresh();
             //MessageBox.Show("Selection changed!");
         }
+        private void RibbonApplicationMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
  

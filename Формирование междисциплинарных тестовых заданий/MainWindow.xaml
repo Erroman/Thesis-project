@@ -18,6 +18,41 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0">
+
+            <!-- Help Pane, located at the right-hand side -->
+            <Ribbon.HelpPaneContent>
+                <RibbonButton />
+            </Ribbon.HelpPaneContent>
+
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu>
+                    <RibbonApplicationMenuItem Header="Настройки" />
+                    <RibbonApplicationMenuItem Header="Выход из программы" Click="RibbonApplicationMenuItem_Click" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <!-- Ribbon Tab #1: Home -->
+            <RibbonTab Header="Список поступающих">
+
+                <!-- Home  group-->
+                <RibbonGroup x:Name="ClipboardGroup" Header="Список поступающих">
+                </RibbonGroup>
+
+
+            </RibbonTab>
+
+            <!-- Ribbon Tab #2: Launch -->
+            <RibbonTab Header="Личные данные" KeyTip="I">
+                <!-- Launch/Applications group-->
+                <!-- Employee And Payroll group-->
+                <RibbonGroup x:Name="Employee" Header="Подробные сведения о поступающих в наш колледж">
+                </RibbonGroup>
+
+
+            </RibbonTab>
+
+        </Ribbon>
         <TabControl Grid.Row="1">
         <TabItem Header="Тестирование">
         </TabItem>
