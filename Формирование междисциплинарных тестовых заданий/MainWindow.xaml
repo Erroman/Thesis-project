@@ -136,9 +136,9 @@
                     <TextBox Grid.Row="1" Grid.Column="2" Height="20" ></TextBox>
                     <TextBox Grid.Row="2" Grid.Column="2" Height="20" ></TextBox>
                     <TextBox Grid.Row="3" Grid.Column="2" Height="20" ></TextBox>
-                    <PasswordBox Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
-                    <PasswordBox Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
-                    <PasswordBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
+                    <PasswordBox Grid.Row="1" Grid.Column="3" Height="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
+                    <PasswordBox Grid.Row="2" Grid.Column="3" Height="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
+                    <PasswordBox Grid.Row="3" Grid.Column="3" Height="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
                 </Grid>
             </TabItem>
 
