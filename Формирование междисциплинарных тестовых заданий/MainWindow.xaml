@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Ribbon x:Name="RibbonWin"  SelectedIndex="1">
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="2">
 
             <!-- Help Pane, located at the right-hand side -->
             <Ribbon.HelpPaneContent>
@@ -133,6 +133,12 @@
                     <TextBlock HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Text="Вход студента" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
                     <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Логин:" TextWrapping="Wrap" VerticalAlignment="Center"  Width="57"/>
                     <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Пароль:" TextWrapping="Wrap" VerticalAlignment="Center"  Width="57"/>
+                    <TextBox Grid.Row="1" Grid.Column="2" Height="20" ></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="2" Height="20" ></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="2" Height="20" ></TextBox>
+                    <PasswordBox Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
+                    <PasswordBox Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
+                    <PasswordBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
                 </Grid>
             </TabItem>
 
