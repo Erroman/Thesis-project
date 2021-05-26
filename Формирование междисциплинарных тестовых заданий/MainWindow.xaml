@@ -133,9 +133,9 @@
                     <TextBlock HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Text="Вход студента" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
                     <TextBlock HorizontalAlignment="Center" Grid.Column="2" Text="Логин:" TextWrapping="Wrap" VerticalAlignment="Center"  Width="57"/>
                     <TextBlock HorizontalAlignment="Center" Grid.Column="3" Text="Пароль:" TextWrapping="Wrap" VerticalAlignment="Center"  Width="57"/>
-                    <TextBox Grid.Row="1" Grid.Column="2" Height="20" ></TextBox>
-                    <TextBox Grid.Row="2" Grid.Column="2" Height="20" ></TextBox>
-                    <TextBox Grid.Row="3" Grid.Column="2" Height="20" ></TextBox>
+                    <TextBox Grid.Row="1" Grid.Column="2" Height="20"  VerticalAlignment="Center"  ></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="2" Height="20"  VerticalAlignment="Center" ></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="2" Height="20"  VerticalAlignment="Center" ></TextBox>
                     <PasswordBox Grid.Row="1" Grid.Column="3" Height="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
                     <PasswordBox Grid.Row="2" Grid.Column="3" Height="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
                     <PasswordBox Grid.Row="3" Grid.Column="3" Height="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100"/>
