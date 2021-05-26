@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Формирование_междисциплинарных_тестовых_заданий"
         mc:Ignorable="d"
-        Title="Формирование междисциплинарных тестовых заданий" Height="801" Width="800" Loaded="Window_Loaded" >
+        Title="Формирование междисциплинарных тестовых заданий" Height="801" Width="800" Loaded="Window_Loaded" WindowState="Maximized" >
     <Window.Resources>
         <CollectionViewSource x:Key="subjectsViewSource"/>
         <CollectionViewSource x:Key="questionsViewSource" 
@@ -43,14 +43,14 @@
 
 
             <RibbonTab Header="Создание тестов" KeyTip="I">
-   
+
                 <RibbonGroup x:Name="CreatingTestsGroup" Header="Создание тестов преподавателем">
                 </RibbonGroup>
 
 
             </RibbonTab>
             <RibbonTab Header="Администрирование" KeyTip="I">
-      
+
                 <RibbonGroup x:Name="AdministrationGroup" Header="Управление работой программы">
                 </RibbonGroup>
 
@@ -62,52 +62,79 @@
             <TabControl.SelectedIndex>
                 <Binding ElementName="RibbonWin" Path="SelectedIndex"/>
             </TabControl.SelectedIndex>
-        <TabItem Header="Тестирование">
-        </TabItem>
-        <TabItem Header="Создание тестов">
-            <Grid>
-                <DataGrid x:Name="subjectsDataGrid" AutoGenerateColumns="False" 
+            <TabItem Header="Тестирование">
+            </TabItem>
+            <TabItem Header="Создание тестов">
+                <Grid>
+                    <DataGrid x:Name="subjectsDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource subjectsViewSource}}" 
                   Margin="13,13,43,229" RowDetailsVisibilityMode="VisibleWhenSelected">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding SubjectId}"
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding SubjectId}"
                                     Header="Предмет Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                        <DataGridTextColumn Binding="{Binding SubjectName}" Header="Предмет" 
+                            <DataGridTextColumn Binding="{Binding SubjectName}" Header="Предмет" 
                                     Width="*"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-                <DataGrid x:Name="questionsDataGrid" AutoGenerateColumns="False" 
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="questionsDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource questionsViewSource}}" 
                   Margin="13,205,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251" SelectionChanged="questionsDataGrid_SelectionChanged">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding QuestionId}" 
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding QuestionId}" 
                                     Header="Вопрос Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                        <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-                <DataGrid x:Name="answersDataGrid" AutoGenerateColumns="False" 
+                            <DataGridTextColumn Binding="{Binding QuestionText}" Header="Вопрос" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="answersDataGrid" AutoGenerateColumns="False" 
                   EnableRowVirtualization="True" 
                   ItemsSource="{Binding Source={StaticResource answersViewSource}}" 
                   Margin="13,397,43,108" RowDetailsVisibilityMode="VisibleWhenSelected" 
                   RenderTransformOrigin="0.488,0.251">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding AnswerId}" 
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding AnswerId}" 
                                     Header="Ответ Id" Width="SizeToHeader"
                                     IsReadOnly="True"/>
-                        <DataGridTextColumn Binding="{Binding AnswerText}" Header="Ответ" Width="*"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                            <DataGridTextColumn Binding="{Binding AnswerText}" Header="Ответ" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
 
-            </Grid>
-        </TabItem>
-        <TabItem Header="Администрирование">
-        </TabItem>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Администрирование">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Text="Вход администратора" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Text="Вход преподавателя" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Text="Вход студента" TextWrapping="Wrap" VerticalAlignment="Center"  Width="111"/>
+                </Grid>
+            </TabItem>
 
-    </TabControl>
+
+        </TabControl>
     </Grid>
 </Window>
