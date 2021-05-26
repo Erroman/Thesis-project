@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Ribbon x:Name="RibbonWin"  SelectedIndex="0">
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="1">
 
             <!-- Help Pane, located at the right-hand side -->
             <Ribbon.HelpPaneContent>
@@ -32,28 +32,36 @@
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
 
-            <!-- Ribbon Tab #1: Home -->
-            <RibbonTab Header="Список поступающих">
+            <RibbonTab Header="Тестирование">
 
-                <!-- Home  group-->
-                <RibbonGroup x:Name="ClipboardGroup" Header="Список поступающих">
+
+                <RibbonGroup x:Name="TestingGroup" Header="Проверка знаний студента колледжа">
                 </RibbonGroup>
 
 
             </RibbonTab>
 
-            <!-- Ribbon Tab #2: Launch -->
-            <RibbonTab Header="Личные данные" KeyTip="I">
-                <!-- Launch/Applications group-->
-                <!-- Employee And Payroll group-->
-                <RibbonGroup x:Name="Employee" Header="Подробные сведения о поступающих в наш колледж">
+
+            <RibbonTab Header="Создание тестов" KeyTip="I">
+   
+                <RibbonGroup x:Name="CreatingTestsGroup" Header="Создание тестов преподавателем">
+                </RibbonGroup>
+
+
+            </RibbonTab>
+            <RibbonTab Header="Администрирование" KeyTip="I">
+      
+                <RibbonGroup x:Name="AdministrationGroup" Header="Управление работой программы">
                 </RibbonGroup>
 
 
             </RibbonTab>
 
         </Ribbon>
-        <TabControl Grid.Row="1">
+        <TabControl x:Name="tabbedPanes" Grid.Row="1" >
+            <TabControl.SelectedIndex>
+                <Binding ElementName="RibbonWin" Path="SelectedIndex"/>
+            </TabControl.SelectedIndex>
         <TabItem Header="Тестирование">
         </TabItem>
         <TabItem Header="Создание тестов">
